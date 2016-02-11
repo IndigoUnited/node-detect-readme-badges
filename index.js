@@ -24,6 +24,7 @@ const parsers = requireDirectory(module, './lib', { recurse: false });
 // default to shields.io
 
 function isBadgeUrl(url) {
+    // loose definition of a badge url
     return ['.svg', '.png', '.jpg', '.gif', 'svg=true', 'png=true', '/badge/']
     .some(extension => url.indexOf(extension) !== -1);
 }
