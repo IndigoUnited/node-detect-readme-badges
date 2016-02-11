@@ -7,9 +7,16 @@ import detectBadges from '../../';
 // license https://img.shields.io/npm/l/${package}.svg
 
 test('nodei: nodei.co', t => {
-    const pkg = 'js-promtie';
+    let pkg = 'js-promtie';
+    let badge = detectBadges(`https://nodei.co/npm/${pkg}.png`)[0];
 
-    const badge = detectBadges(`https://nodei.co/npm/${pkg}.png`)[0];
+    t.is(badge.originalUrl, `https://nodei.co/npm/${pkg}.png`);
+    t.is(badge.url, `https://img.shields.io/npm/v/${pkg}.svg`);
+    t.is(badge.metaUrl, `https://img.shields.io/npm/v/${pkg}.json`);
+    t.is(badge.type, 'npm');
+
+    pkg = '@carsy/eslint-config';
+    badge = detectBadges(`https://nodei.co/npm/${pkg}.png`)[0];
 
     t.is(badge.originalUrl, `https://nodei.co/npm/${pkg}.png`);
     t.is(badge.url, `https://img.shields.io/npm/v/${pkg}.svg`);
@@ -18,9 +25,16 @@ test('nodei: nodei.co', t => {
 });
 
 test('npm: shields.io', t => {
-    const pkg = 'js-promtie';
+    let pkg = 'js-promtie';
+    let badge = detectBadges(`https://img.shields.io/npm/dm/${pkg}.svg`)[0];
 
-    const badge = detectBadges(`https://img.shields.io/npm/dm/${pkg}.svg`)[0];
+    t.is(badge.originalUrl, `https://img.shields.io/npm/dm/${pkg}.svg`);
+    t.is(badge.url, `https://img.shields.io/npm/dm/${pkg}.svg`);
+    t.is(badge.metaUrl, `https://img.shields.io/npm/dm/${pkg}.json`);
+    t.is(badge.type, 'npm');
+
+    pkg = '@carsy/eslint-config';
+    badge = detectBadges(`https://img.shields.io/npm/dm/${pkg}.svg`)[0];
 
     t.is(badge.originalUrl, `https://img.shields.io/npm/dm/${pkg}.svg`);
     t.is(badge.url, `https://img.shields.io/npm/dm/${pkg}.svg`);
