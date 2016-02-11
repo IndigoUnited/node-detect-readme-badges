@@ -1,0 +1,37 @@
+{
+  "name": "badges-from-readme",
+  "version": "0.1.0",
+  "description": "Extract badges information from readme data",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "npm run lint && ava test/spec --tap | tap-nyan"
+  },
+  "bugs": {
+    "url": "https://github.com/IndigoUnited/js-badges-from-readme/issues/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/IndigoUnited/js-badges-from-readme.git"
+  },
+  "keywords": [
+    "badge",
+    "badges",
+    "readme"
+  ],
+  "author": "IndigoUnited <hello@indigounited.com> (http://indigounited.com)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@carsy/eslint-config": "^0.1.0",
+    "ava": "^0.11.0",
+    "eslint": "^1.10.3",
+    "tap-nyan": "0.0.2"
+  },
+  "dependencies": {
+    "get-urls": "^5.0.0",
+    "require-directory": "^2.1.1"
+  }
+}
