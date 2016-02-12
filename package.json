@@ -1,18 +1,18 @@
 {
-  "name": "badges-from-readme",
+  "name": "detect-readme-badges",
   "version": "0.1.0",
-  "description": "Extract badges information from readme data",
+  "description": "Scans a repository's readme file, searching for badges",
   "main": "index.js",
   "scripts": {
     "lint": "eslint **/*.js",
     "test": "npm run lint && ava test/spec --tap | tap-nyan"
   },
   "bugs": {
-    "url": "https://github.com/IndigoUnited/js-badges-from-readme/issues/"
+    "url": "https://github.com/IndigoUnited/node-detect-readme-badges/issues/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/IndigoUnited/js-badges-from-readme.git"
+    "url": "git://github.com/IndigoUnited/node-detect-readme-badges.git"
   },
   "keywords": [
     "badge",
