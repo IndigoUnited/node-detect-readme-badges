@@ -49,9 +49,9 @@ test('david: shields.io (with type)', t => {
     const repo = 'js-promtie';
     const type = 'dev';
 
-    const badge = detectBadges(`https://david-dm.org/${user}/${repo}/${type}-status.svg`)[0];
+    const badge = detectBadges(`https://img.shields.io/david/${type}/${user}/${repo}.svg`)[0];
 
-    t.is(badge.urls.original, `https://david-dm.org/${user}/${repo}/${type}-status.svg`);
+    t.is(badge.urls.original, `https://img.shields.io/david/${type}/${user}/${repo}.svg`);
     t.is(badge.urls.service, `https://david-dm.org/${user}/${repo}/${type}-status.svg`);
     t.is(badge.urls.content, `https://img.shields.io/david/${type}/${user}/${repo}.json`);
     t.is(badge.info.service, 'david');
