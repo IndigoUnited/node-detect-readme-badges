@@ -7,9 +7,9 @@
 [npm-url]:https://npmjs.org/package/detect-repo-badges
 [npm-image]:http://img.shields.io/npm/v/detect-repo-badges.svg?style=flat-square
 [travis-url]:https://travis-ci.org/IndigoUnited/node-detect-repo-badges
-[travis-image]:http://img.shields.io/travis/IndigoUnited/node-detect-repo-badges.svg?branch=master&style=flat-square
+[travis-image]:http://img.shields.io/travis/IndigoUnited/node-detect-repo-badges/master.svg&style=flat-square
 [coveralls-url]:https://coveralls.io/r/IndigoUnited/node-detect-repo-badges
-[coveralls-image]:https://img.shields.io/coveralls/IndigoUnited/node-detect-repo-badges.svg?branch=master&style=flat-square
+[coveralls-image]:https://img.shields.io/coveralls/IndigoUnited/node-detect-repo-badges/master.svg&style=flat-square
 [david-dm-url]:https://david-dm.org/IndigoUnited/node-detect-repo-badges
 [david-dm-image]:https://img.shields.io/david/IndigoUnited/node-detect-repo-badges.svg?style=flat-square
 [david-dm-dev-url]:https://david-dm.org/IndigoUnited/node-detect-repo-badges#info=devDependencies

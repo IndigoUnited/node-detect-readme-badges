@@ -7,10 +7,12 @@ test('coveralls: coveralls.io', t => {
 
     const badge = detectBadges(`https://coveralls.io/repos/${user}/${repo}/badge.svg`)[0];
 
-    t.is(badge.originalUrl, `https://coveralls.io/repos/${user}/${repo}/badge.svg`);
-    t.is(badge.url, `https://coveralls.io/repos/${user}/${repo}/badge.svg`);
-    t.is(badge.metaUrl, `https://img.shields.io/coveralls/${user}/${repo}.json`);
-    t.is(badge.type, 'coveralls');
+    t.is(badge.urls.original, `https://coveralls.io/repos/${user}/${repo}/badge.svg`);
+    t.is(badge.urls.service, `https://coveralls.io/repos/${user}/${repo}/badge.svg`);
+    t.is(badge.urls.shields, `https://img.shields.io/coveralls/${user}/${repo}.svg`);
+    t.is(badge.urls.content, `https://img.shields.io/coveralls/${user}/${repo}.json`);
+    t.is(badge.info.service, 'coveralls');
+    t.is(badge.info.type, 'coverage');
 });
 
 test('coveralls: coveralls.io (with branch)', t => {
@@ -20,10 +22,29 @@ test('coveralls: coveralls.io (with branch)', t => {
 
     const badge = detectBadges(`https://coveralls.io/repos/${user}/${repo}/badge.svg?branch=${branch}`)[0];
 
-    t.is(badge.originalUrl, `https://coveralls.io/repos/${user}/${repo}/badge.svg?branch=${branch}`);
-    t.is(badge.url, `https://coveralls.io/repos/${user}/${repo}/badge.svg?branch=${branch}`);
-    t.is(badge.metaUrl, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.json`);
-    t.is(badge.type, 'coveralls');
+    t.is(badge.urls.original, `https://coveralls.io/repos/${user}/${repo}/badge.svg?branch=${branch}`);
+    t.is(badge.urls.service, `https://coveralls.io/repos/${user}/${repo}/badge.svg?branch=${branch}`);
+    t.is(badge.urls.shields, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.svg`);
+    t.is(badge.urls.content, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.json`);
+    t.is(badge.info.service, 'coveralls');
+    t.is(badge.info.type, 'coverage');
+    t.same(badge.info.modifiers, { branch: 'master' });
+});
+
+test('coveralls: coveralls.io (with service)', t => {
+    const user = 'IndigoUnited';
+    const repo = 'js-promtie';
+    const branch = 'master';
+
+    const badge = detectBadges(`https://coveralls.io/repos/github/${user}/${repo}/badge.svg?branch=${branch}`)[0];
+
+    t.is(badge.urls.original, `https://coveralls.io/repos/github/${user}/${repo}/badge.svg?branch=${branch}`);
+    t.is(badge.urls.service, `https://coveralls.io/repos/github/${user}/${repo}/badge.svg?branch=${branch}`);
+    t.is(badge.urls.shields, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.svg`);
+    t.is(badge.urls.content, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.json`);
+    t.is(badge.info.service, 'coveralls');
+    t.is(badge.info.type, 'coverage');
+    t.same(badge.info.modifiers, { branch: 'master' });
 });
 
 test('coveralls: shields.io', t => {
@@ -32,10 +53,12 @@ test('coveralls: shields.io', t => {
 
     const badge = detectBadges(`https://img.shields.io/coveralls/${user}/${repo}.svg`)[0];
 
-    t.is(badge.originalUrl, `https://img.shields.io/coveralls/${user}/${repo}.svg`);
-    t.is(badge.url, `https://coveralls.io/repos/${user}/${repo}/badge.svg`);
-    t.is(badge.metaUrl, `https://img.shields.io/coveralls/${user}/${repo}.json`);
-    t.is(badge.type, 'coveralls');
+    t.is(badge.urls.original, `https://img.shields.io/coveralls/${user}/${repo}.svg`);
+    t.is(badge.urls.service, `https://coveralls.io/repos/${user}/${repo}/badge.svg`);
+    t.is(badge.urls.shields, `https://img.shields.io/coveralls/${user}/${repo}.svg`);
+    t.is(badge.urls.content, `https://img.shields.io/coveralls/${user}/${repo}.json`);
+    t.is(badge.info.service, 'coveralls');
+    t.is(badge.info.type, 'coverage');
 });
 
 test('coveralls: coveralls.io (with branch)', t => {
@@ -45,13 +68,16 @@ test('coveralls: coveralls.io (with branch)', t => {
 
     const badge = detectBadges(`https://img.shields.io/coveralls/${user}/${repo}/${branch}.svg`)[0];
 
-    t.is(badge.originalUrl, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.svg`);
-    t.is(badge.url, `https://coveralls.io/repos/${user}/${repo}/badge.svg?branch=${branch}`);
-    t.is(badge.metaUrl, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.json`);
-    t.is(badge.type, 'coveralls');
+    t.is(badge.urls.original, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.svg`);
+    t.is(badge.urls.service, `https://coveralls.io/repos/${user}/${repo}/badge.svg?branch=${branch}`);
+    t.is(badge.urls.shields, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.svg`);
+    t.is(badge.urls.content, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.json`);
+    t.is(badge.info.service, 'coveralls');
+    t.is(badge.info.type, 'coverage');
+    t.same(badge.info.modifiers, { branch: 'master' });
 });
 
-test('coveralls: not a coveralls url', t => {
+test('coveralls: not a valid coveralls url', t => {
     const user = 'IndigoUnited';
     const repo = 'js-promtie';
 
