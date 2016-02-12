@@ -1,4 +1,6 @@
 test/
+.nyc_output/
+coverage/
 .eslintrc.json
 .editorconfig
 .travis.yml

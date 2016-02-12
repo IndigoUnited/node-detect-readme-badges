@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint **/*.js",
-    "test": "npm run lint && ava test/spec --tap | tap-nyan"
+    "test": "npm run lint && ava test/spec --tap | tap-nyan",
+    "test-cov": "nyc ava test/spec --reporter=lcov && echo coverage report: coverage/lcov-report/index.html"
   },
   "bugs": {
     "url": "https://github.com/IndigoUnited/node-detect-readme-badges/issues/"
@@ -27,7 +28,9 @@
   "devDependencies": {
     "@carsy/eslint-config": "^0.1.0",
     "ava": "^0.11.0",
+    "coveralls": "^2.11.6",
     "eslint": "^1.10.3",
+    "nyc": "^5.6.0",
     "tap-nyan": "0.0.2"
   },
   "dependencies": {
