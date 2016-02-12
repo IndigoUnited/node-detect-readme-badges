@@ -19,13 +19,72 @@
 
 `detectReadmeBadges(readme) -> Array`
 
-Given a readme file (in string), detectReadmeBadges returns the array of badges found.
+Given a readme file (in string), detectReadmeBadges returns the array of badges found. Example:
 
 ```js
 const detectReadmeBadges = require('detect-readme-badges');
+const badges = detectReadmeBadges(`
+    ...
 
-detectReadmeBadges('repo-directory')
+    > Simplified HTTP/HTTPS requests
+
+    [![Build Status](https://travis-ci.org/sindresorhus/got.svg?branch=master)](https://travis-ci.org/sindresorhus/got) [![Coverage Status](https://coveralls.io/repos/sindresorhus/got/badge.svg?service=github&branch=master)](https://coveralls.io/github/sindresorhus/got?branch=master) [![Downloads](https://img.shields.io/npm/dm/got.svg)](https://npmjs.com/got)
+
+    A nicer interface to the built-in ['http'](http://nodejs.org/api/http.html) module.
+
+    ...
+`)
+
+// badges
+[
+    {
+        urls: {
+            original: 'https://travis-ci.org/sindresorhus/got.svg?branch=master',
+            service: 'https://api.travis-ci.org/sindresorhus/got.svg?branch=master',
+            shields: 'https://img.shields.io/travis/sindresorhus/got/master.svg',
+            content: 'https://img.shields.io/travis/sindresorhus/got/master.json',
+        },
+        info: { service: 'travis', type: 'build', modifiers: { branch: 'master' } },
+    },
+    {
+        urls: {
+            original: 'https://coveralls.io/repos/sindresorhus/got/badge.svg?branch=master',
+            service: 'https://coveralls.io/repos/sindresorhus/got/badge.svg?branch=master',
+            shields: 'https://img.shields.io/coveralls/sindresorhus/got/master.svg',
+            content: 'https://img.shields.io/coveralls/sindresorhus/got/master.json',
+        },
+        info: { service: 'coveralls', type: 'coverage', modifiers: { branch: 'master' } },
+    },
+    {
+        urls: {
+            original: 'https://img.shields.io/npm/dm/got.svg',
+            shields: 'https://img.shields.io/npm/dm/got.svg',
+            content: 'https://img.shields.io/npm/dm/got.json' },
+        info: { service: 'npm', type: 'downloads', modifiers: { type: 'dm' } },
+    },
+]
 ```
+
+#### `badge.urls`
+
+**`urls.original`** the original matched url.
+
+**`urls.service`** the service url.
+
+**`urls.shields`** the shields.io equivalent url.
+
+**`urls.content`** the shields.io url to extract a json of the badge's "value".
+
+#### `badge.info`
+
+Information extracted from the badge url.
+
+**`info.type`** type of the badge. Available types are `build`, `coverage`, `downloads`, `version` and `dependencies`.
+
+**`info.service`** is the service that provides the badge. Available services are `coveralls`, `david`, `npm` (shields.io or nodei.co), and `travis`.
+
+**`info.modifiers`** are the badge modifiers that alter the interpretation of the repo/package depending on the service.
+
 
 ## Tests
 
