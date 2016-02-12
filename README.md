@@ -1,4 +1,4 @@
-# node-detect-readme-badges
+# detect-readme-badges
 
 > Scans a repository's readme file, searching for badges
 
@@ -88,7 +88,7 @@ Information extracted from the badge url.
 
 ## Tests
 
-`$ npm test` 
+`$ npm test`
 `$ npm test-cov` to get coverage report
 
 ## License
