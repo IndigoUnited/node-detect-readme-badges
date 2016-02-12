@@ -15,9 +15,22 @@
 [david-dm-dev-url]:https://david-dm.org/IndigoUnited/node-detect-readme-badges#info=devDependencies
 [david-dm-dev-image]:https://img.shields.io/david/dev/IndigoUnited/node-detect-readme-badges.svg?style=flat-square
 
+## Usage
+
+`detectReadmeBadges(readme) -> Array`
+
+Given a readme file (in string), detectReadmeBadges returns the array of badges found.
+
+```js
+const detectReadmeBadges = require('detect-readme-badges');
+
+detectReadmeBadges('repo-directory')
+```
+
 ## Tests
 
-`$ npm test`
+`$ npm test` 
+`$ npm test-cov` to get coverage report
 
 ## License
 
