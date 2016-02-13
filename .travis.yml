@@ -2,6 +2,4 @@ language: node_js
 node_js:
   - "4"
   - "5"
-script: "eslint **/*.js && ava test/spec"
-after_success:
-    - "nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
+script: "eslint **/*.js && nyc ava test/spec && nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
