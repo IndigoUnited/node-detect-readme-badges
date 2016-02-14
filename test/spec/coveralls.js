@@ -61,7 +61,7 @@ test('coveralls: shields.io', t => {
     t.is(badge.info.type, 'coverage');
 });
 
-test('coveralls: coveralls.io (with branch)', t => {
+test('coveralls: shields.io (with branch)', t => {
     const user = 'IndigoUnited';
     const repo = 'js-promtie';
     const branch = 'master';
