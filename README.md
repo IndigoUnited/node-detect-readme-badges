@@ -79,9 +79,9 @@ const badges = detectReadmeBadges(`
 
 Information extracted from the badge url.
 
-**`info.type`** type of the badge. Available types are `build`, `coverage`, `downloads`, `version` and `dependencies`.
+**`info.type`** type of the badge. Available types are `build`, `coverage`, `downloads`, `version`, `dependencies` and `misc`.
 
-**`info.service`** is the service that provides the badge. Available services are `coveralls`, `david`, `npm` (shields.io or nodei.co), and `travis`.
+**`info.service`** is the service that provides the badge. Available services are [coveralls](https://coveralls.io), [david](https://david-dm.org), npm ([shields.io](https://shields.io) or [nodei.co](https://nodei.co)), [travis](https://travis-ci.org) and [gitter](https://gitter.im).
 
 **`info.modifiers`** are the badge modifiers that alter the interpretation of the repo/package depending on the service.
 
