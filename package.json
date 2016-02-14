@@ -1,6 +1,6 @@
 {
   "name": "detect-readme-badges",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Scans a repository's readme file, searching for badges",
   "main": "index.js",
   "scripts": {
