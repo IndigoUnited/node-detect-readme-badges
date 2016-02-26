@@ -96,3 +96,13 @@ test('readme files: got', t => {
         info: { service: 'npm', type: 'downloads', modifiers: { type: 'dm' } },
     });
 });
+
+test('readme files: mt-stats, should not crash on malformed URLs', t => {
+    let badges;
+
+    t.notThrows(() => {
+        badges = detectBadges(readFile('../fixtures/mt-stats.md').toString());
+    });
+
+    t.same(badges, []);
+});
