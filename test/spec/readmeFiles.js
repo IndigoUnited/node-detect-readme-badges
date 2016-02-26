@@ -98,7 +98,11 @@ test('readme files: got', t => {
 });
 
 test('readme files: mt-stats, should not crash on malformed URLs', t => {
+    let badges;
+
     t.notThrows(() => {
-        detectBadges(readFile('../fixtures/mt-stats.md').toString());
+        badges = detectBadges(readFile('../fixtures/mt-stats.md').toString());
     });
+
+    t.same(badges, []);
 });
