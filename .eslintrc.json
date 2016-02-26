@@ -1,0 +1,8 @@
+{
+    "root": true,
+    "extends": [
+        "@carsy/eslint-config/es6",
+        "@carsy/eslint-config/addons/node",
+        "@carsy/eslint-config/addons/node-v4-es6"
+    ]
+}
