@@ -22,9 +22,17 @@ function isBadgeUrl(url) {
 }
 
 module.exports = readme => {
-    return getUrls(
-        readme.split('http').map(url => 'http' + url).join(' ') // Separate urls by spaces first
-    )
+    let urls;
+
+    readme = readme || readme.split('http').map(url => 'http' + url).join(' '); // Separate urls by spaces first
+
+    try {
+        urls = getUrls(readme);
+    } catch (err) {
+        return [];
+    }
+
+    return urls
     .map(url => url && url.split(')')[0]) // ignore markdown syntax leftovers
     .filter(url => !!url && isBadgeUrl(url))
     .map(url => {
