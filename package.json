@@ -4,7 +4,7 @@
   "description": "Scans a repository's readme file, searching for badges",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint '{*.js,lib/**/*.js,test/**/*.js}'",
+    "lint": "eslint *.js lib test",
     "test": "npm run lint && ava test/spec --tap | tap-nyan",
     "test-cov": "nyc ava test/spec --reporter=lcov && echo coverage report: coverage/lcov-report/index.html"
   },
@@ -26,7 +26,7 @@
     "node": ">=4.0.0"
   },
   "devDependencies": {
-    "@carsy/eslint-config": "^0.2.0",
+    "@carsy/eslint-config": "^0.2.2",
     "ava": "^0.12.0",
     "coveralls": "^2.11.6",
     "eslint": "^2.2.0",
