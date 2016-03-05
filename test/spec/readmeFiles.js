@@ -15,7 +15,7 @@ test('readme files: self', t => {
     });
     t.same(badges[1], {
         urls: {
-            original: 'http://img.shields.io/travis/IndigoUnited/node-detect-readme-badges/master.svg&style=flat-square',
+            original: 'http://img.shields.io/travis/IndigoUnited/node-detect-readme-badges/master.svg?style=flat-square',
             service: 'https://api.travis-ci.org/IndigoUnited/node-detect-readme-badges.svg?branch=master',
             shields: 'https://img.shields.io/travis/IndigoUnited/node-detect-readme-badges/master.svg',
             content: 'https://img.shields.io/travis/IndigoUnited/node-detect-readme-badges/master.json',
@@ -28,7 +28,7 @@ test('readme files: self', t => {
     });
     t.same(badges[2], {
         urls: {
-            original: 'https://img.shields.io/coveralls/IndigoUnited/node-detect-readme-badges/master.svg&style=flat-square',
+            original: 'https://img.shields.io/coveralls/IndigoUnited/node-detect-readme-badges/master.svg?style=flat-square',
             service: 'https://coveralls.io/repos/IndigoUnited/node-detect-readme-badges/badge.svg?branch=master',
             shields: 'https://img.shields.io/coveralls/IndigoUnited/node-detect-readme-badges/master.svg',
             content: 'https://img.shields.io/coveralls/IndigoUnited/node-detect-readme-badges/master.json',
