@@ -28,7 +28,7 @@ test('coveralls: coveralls.io (with branch)', t => {
     t.is(badge.urls.content, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.json`);
     t.is(badge.info.service, 'coveralls');
     t.is(badge.info.type, 'coverage');
-    t.same(badge.info.modifiers, { branch: 'master' });
+    t.deepEqual(badge.info.modifiers, { branch: 'master' });
 });
 
 test('coveralls: coveralls.io (with service)', t => {
@@ -44,7 +44,7 @@ test('coveralls: coveralls.io (with service)', t => {
     t.is(badge.urls.content, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.json`);
     t.is(badge.info.service, 'coveralls');
     t.is(badge.info.type, 'coverage');
-    t.same(badge.info.modifiers, { branch: 'master' });
+    t.deepEqual(badge.info.modifiers, { branch: 'master' });
 });
 
 test('coveralls: shields.io', t => {
@@ -74,12 +74,12 @@ test('coveralls: shields.io (with branch)', t => {
     t.is(badge.urls.content, `https://img.shields.io/coveralls/${user}/${repo}/${branch}.json`);
     t.is(badge.info.service, 'coveralls');
     t.is(badge.info.type, 'coverage');
-    t.same(badge.info.modifiers, { branch: 'master' });
+    t.deepEqual(badge.info.modifiers, { branch: 'master' });
 });
 
 test('coveralls: not a valid coveralls url', t => {
     const user = 'IndigoUnited';
     const repo = 'js-promtie';
 
-    t.notOk(detectBadges(`https://coveralls.com/repos/${user}/${repo}/badge.svg`)[0]);
+    t.falsy(detectBadges(`https://coveralls.com/repos/${user}/${repo}/badge.svg`)[0]);
 });

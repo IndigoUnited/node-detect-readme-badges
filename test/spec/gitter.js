@@ -33,5 +33,5 @@ test('gitter: not a valid gitter url', t => {
     const user = 'IndigoUnited';
     const repo = 'js-promtie';
 
-    t.notOk(detectBadges(`https://gitter.com/${user}/${repo}.svg`)[0]);
+    t.falsy(detectBadges(`https://gitter.com/${user}/${repo}.svg`)[0]);
 });

@@ -49,5 +49,5 @@ test('npm: shields.io', t => {
 test('npm: not a valid npm url', t => {
     const pkg = 'js-promtie';
 
-    t.notOk(detectBadges(`https://npm.com/dm/${pkg}.svg`)[0]);
+    t.falsy(detectBadges(`https://npm.com/dm/${pkg}.svg`)[0]);
 });

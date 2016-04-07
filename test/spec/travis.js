@@ -26,7 +26,7 @@ test('travis: travis-ci.org (with branch)', t => {
     t.is(badge.urls.content, `https://img.shields.io/travis/${user}/${repo}/${branch}.json`);
     t.is(badge.info.service, 'travis');
     t.is(badge.info.type, 'build');
-    t.same(badge.info.modifiers, { branch: 'master' });
+    t.deepEqual(badge.info.modifiers, { branch: 'master' });
 });
 
 test('travis: shields.io', t => {
@@ -54,12 +54,12 @@ test('travis: shields.io (with branch)', t => {
     t.is(badge.urls.content, `https://img.shields.io/travis/${user}/${repo}/${branch}.json`);
     t.is(badge.info.service, 'travis');
     t.is(badge.info.type, 'build');
-    t.same(badge.info.modifiers, { branch: 'master' });
+    t.deepEqual(badge.info.modifiers, { branch: 'master' });
 });
 
 test('travis: not a valid travis url', t => {
     const user = 'IndigoUnited';
     const repo = 'js-promtie';
 
-    t.notOk(detectBadges(`https://travis.com/${user}/${repo}.svg`)[0]);
+    t.falsy(detectBadges(`https://travis.com/${user}/${repo}.svg`)[0]);
 });

@@ -12,7 +12,7 @@ test('david: david-dm.org', t => {
     t.is(badge.urls.content, `https://img.shields.io/david/${user}/${repo}.json`);
     t.is(badge.info.service, 'david');
     t.is(badge.info.type, 'dependencies');
-    t.same(badge.info.modifiers, { statusType: 'normal' });
+    t.deepEqual(badge.info.modifiers, { statusType: 'normal' });
 });
 
 test('david: david-dm.org (with type)', t => {
@@ -27,7 +27,7 @@ test('david: david-dm.org (with type)', t => {
     t.is(badge.urls.content, `https://img.shields.io/david/${type}/${user}/${repo}.json`);
     t.is(badge.info.service, 'david');
     t.is(badge.info.type, 'dependencies');
-    t.same(badge.info.modifiers, { statusType: 'dev' });
+    t.deepEqual(badge.info.modifiers, { statusType: 'dev' });
 });
 
 test('david: shields.io', t => {
@@ -41,7 +41,7 @@ test('david: shields.io', t => {
     t.is(badge.urls.content, `https://img.shields.io/david/${user}/${repo}.json`);
     t.is(badge.info.service, 'david');
     t.is(badge.info.type, 'dependencies');
-    t.same(badge.info.modifiers, { statusType: 'normal' });
+    t.deepEqual(badge.info.modifiers, { statusType: 'normal' });
 });
 
 test('david: shields.io (with type)', t => {
@@ -56,12 +56,12 @@ test('david: shields.io (with type)', t => {
     t.is(badge.urls.content, `https://img.shields.io/david/${type}/${user}/${repo}.json`);
     t.is(badge.info.service, 'david');
     t.is(badge.info.type, 'dependencies');
-    t.same(badge.info.modifiers, { statusType: 'dev' });
+    t.deepEqual(badge.info.modifiers, { statusType: 'dev' });
 });
 
 test('david: not a valid david url', t => {
     const user = 'IndigoUnited';
     const repo = 'js-promtie';
 
-    t.notOk(detectBadges(`https://david.com/${user}/${repo}.svg`)[0]);
+    t.falsy(detectBadges(`https://david.com/${user}/${repo}.svg`)[0]);
 });
