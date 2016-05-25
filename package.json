@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@carsy/eslint-config": "^0.2.2",
-    "ava": "^0.14.0",
+    "ava": "^0.15.0",
     "coveralls": "^2.11.6",
     "eslint": "^2.2.0",
     "nyc": "^6.0.0",
