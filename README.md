@@ -1,6 +1,6 @@
 # detect-readme-badges
 
-> Scans a repository's readme file, searching for badges
+Scans a repository readme file, searching for badges.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
 
