@@ -1,9 +1,10 @@
 import { readFileSync as readFile } from 'fs';
+import path from 'path';
 import test from 'ava';
 import detectBadges from '../../';
 
 test('readme files: self', t => {
-    const badges = detectBadges(readFile('../../README.md').toString());
+    const badges = detectBadges(readFile(path.join(__dirname, '../../README.md')).toString());
 
     t.deepEqual(badges[0], {
         urls: {
@@ -67,8 +68,8 @@ test('readme files: self', t => {
     });
 });
 
-test('readme files: got', t => {
-    const badges = detectBadges(readFile('../fixtures/got.md').toString());
+test('got', t => {
+    const badges = detectBadges(readFile(path.join(__dirname, '../fixtures/got.md')).toString());
 
     t.deepEqual(badges[0], {
         urls: {
@@ -101,7 +102,7 @@ test('readme files: mt-stats, should not crash on malformed URLs', t => {
     let badges;
 
     t.notThrows(() => {
-        badges = detectBadges(readFile('../fixtures/mt-stats.md').toString());
+        badges = detectBadges(readFile(path.join(__dirname, '../fixtures/mt-stats.md')).toString());
     });
 
     t.deepEqual(badges, []);
