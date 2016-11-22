@@ -32,7 +32,7 @@
     "coveralls": "^2.11.6",
     "eslint": "^3.0.0",
     "nyc": "^9.0.1",
-    "tap-nyan": "1.0.0"
+    "tap-nyan": "1.1.0"
   },
   "dependencies": {
     "get-urls": "^5.0.0",
