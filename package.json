@@ -35,7 +35,7 @@
     "tap-nyan": "1.1.0"
   },
   "dependencies": {
-    "get-urls": "^6.0.0",
+    "get-urls": "^7.0.0",
     "require-directory": "^2.1.1"
   }
 }
