@@ -27,7 +27,7 @@ module.exports = readme => {
     readme = readme || readme.split('http').map(url => 'http' + url).join(' '); // Separate urls by spaces first
 
     try {
-        urls = getUrls(readme);
+        urls = Array.from(getUrls(readme));
     } catch (err) {
         return [];
     }
