@@ -68,7 +68,7 @@ test('readme files: self', t => {
     });
 });
 
-test('got', t => {
+test('readme files: got', t => {
     const badges = detectBadges(readFile(path.join(__dirname, '../fixtures/got.md')).toString());
 
     t.deepEqual(badges[0], {
@@ -106,4 +106,41 @@ test('readme files: mt-stats, should not crash on malformed URLs', t => {
     });
 
     t.deepEqual(badges, []);
+});
+
+test('readme files: bower', t => {
+    const badges = detectBadges(readFile(path.join(__dirname, '../fixtures/bower.md')).toString());
+
+    t.deepEqual(badges[0], {
+        urls: {
+            original: 'https://img.shields.io/travis/bower/bower/master.svg?maxAge=2592000',
+            service: 'https://api.travis-ci.org/bower/bower.svg?branch=master',
+            shields: 'https://img.shields.io/travis/bower/bower/master.svg',
+            content: 'https://img.shields.io/travis/bower/bower/master.json',
+        },
+        info: { service: 'travis', type: 'build', modifiers: { branch: 'master' } },
+    });
+
+    t.deepEqual(badges[1], {
+        urls: {
+            original: 'https://img.shields.io/appveyor/ci/bower/bower/master.svg',
+            service: 'https://ci.appveyor.com/api/projects/status/bower/bower/branch/master',
+            shields: 'https://img.shields.io/appveyor/ci/bower/bower/master.svg',
+            content: 'https://img.shields.io/appveyor/ci/bower/bower/master.json',
+        },
+        info: { service: 'appveyor', type: 'coverage', modifiers: { branch: 'master' } },
+    });
+    t.deepEqual(badges[2], {
+        urls: {
+            original: 'https://img.shields.io/coveralls/bower/bower.svg',
+            service: 'https://coveralls.io/repos/bower/bower/badge.svg',
+            shields: 'https://img.shields.io/coveralls/bower/bower.svg',
+            content: 'https://img.shields.io/coveralls/bower/bower.json',
+        },
+        info: {
+            service: 'coveralls',
+            type: 'coverage',
+            modifiers: { branch: undefined },
+        },
+    });
 });

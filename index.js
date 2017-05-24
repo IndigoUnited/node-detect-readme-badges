@@ -7,7 +7,6 @@ const parsers = requireDirectory(module, './lib', { recurse: false });
 const parsersKeys = Object.keys(parsers);
 
 // TODO badges to support:
-// appveyor https://ci.appveyor.com/api/projects/status/${hash}?svg=true
 // circle-ci https://circleci.com/gh/${user}/${package}.svg
 // codacy https://api.codacy.com/project/badge/grade/${hash}
 // gitter https://badges.gitter.im/${user}/${package}.png
@@ -15,16 +14,19 @@ const parsersKeys = Object.keys(parsers);
 // https://codecov.io/github/codecov/codecov-ruby/coverage.svg?branch=master
 // http://www.coverity.com/
 
-// loose definition of a badge url
+// Loose definition of a badge url
+// Appveyor is the only that doesn't have any extension. It has /api on the url,
+// but this is too generic to be added here, so we playing safe and not applying it.
 function isBadgeUrl(url) {
-    return ['.svg', '.png', '.jpg', '.gif', 'svg=true', 'png=true', 'badge']
+    return ['.svg', '.png', '.jpg', '.gif', 'svg=true', 'png=true', 'badge', 'appveyor']
     .some(extension => url.indexOf(extension) !== -1);
 }
 
 module.exports = readme => {
     let urls;
 
-    readme = readme || readme.split('http').map(url => 'http' + url).join(' '); // Separate urls by spaces first
+    // Separate urls by spaces first
+    readme = readme || readme.split('http').map(url => `http${url}`).join(' ');
 
     try {
         urls = Array.from(getUrls(readme));
@@ -33,7 +35,7 @@ module.exports = readme => {
     }
 
     return urls
-    .map(url => url && url.split(')')[0]) // ignore markdown syntax leftovers
+    .map(url => url && url.split(')')[0]) // Ignore markdown syntax leftovers
     .filter(url => !!url && isBadgeUrl(url))
     .map(url => {
         const parsedUrl = parseUrl(url, true);
@@ -43,7 +45,8 @@ module.exports = readme => {
             badge = parsers[parsersKeys[i]](parsedUrl);
         }
 
-        // fallback to generic shields.io
+        // TODO: Fallback to generic shields.io
+        // If that is the case we should add a flag indicating that it is a guess.
 
         return badge;
     })
