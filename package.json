@@ -31,7 +31,7 @@
     "ava": "^0.19.1",
     "coveralls": "^2.11.6",
     "eslint": "^3.0.0",
-    "nyc": "^10.1.2",
+    "nyc": "^11.0.2",
     "tap-nyan": "1.1.0"
   },
   "dependencies": {
