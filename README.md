@@ -1,5 +1,7 @@
 # detect-readme-badges
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/IndigoUnited/node-detect-readme-badges.svg)](https://greenkeeper.io/)
+
 Scans a repository readme file, searching for badges.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
