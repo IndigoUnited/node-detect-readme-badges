@@ -1,10 +1,8 @@
 # detect-readme-badges
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/IndigoUnited/node-detect-readme-badges.svg)](https://greenkeeper.io/)
-
 Scans a repository readme file, searching for badges.
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url] [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 
 [npm-url]:https://npmjs.org/package/detect-readme-badges
 [npm-image]:http://img.shields.io/npm/v/detect-readme-badges.svg?style=flat-square
@@ -16,6 +14,8 @@ Scans a repository readme file, searching for badges.
 [david-dm-image]:https://img.shields.io/david/IndigoUnited/node-detect-readme-badges.svg?style=flat-square
 [david-dm-dev-url]:https://david-dm.org/IndigoUnited/node-detect-readme-badges?type=dev
 [david-dm-dev-image]:https://img.shields.io/david/dev/IndigoUnited/node-detect-readme-badges.svg?style=flat-square
+[greenkeeper-image]:https://badges.greenkeeper.io/IndigoUnited/node-detect-readme-badges.svg
+[greenkeeper-url]:https://greenkeeper.io/
 
 ## Usage
 
