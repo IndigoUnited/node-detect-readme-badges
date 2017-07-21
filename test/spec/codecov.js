@@ -3,8 +3,8 @@ import detectBadges from '../../';
 
 test('codecov: codecov.io old style', t => {
     const service = 'github';
-    const user = 'IndigoUnited';
-    const repo = 'js-promtie';
+    const user = 'codecov';
+    const repo = 'codecov-node';
 
     const badge = detectBadges(`https://codecov.io/${service}/${user}/${repo}/coverage.svg`)[0];
 
@@ -18,8 +18,8 @@ test('codecov: codecov.io old style', t => {
 
 test('codecov: codecov.io old style (with branch)', t => {
     const service = 'github';
-    const user = 'IndigoUnited';
-    const repo = 'js-promtie';
+    const user = 'codecov';
+    const repo = 'codecov-node';
     const branch = 'master';
 
     const badge = detectBadges(`https://codecov.io/${service}/${user}/${repo}/coverage.svg?branch=${branch}`)[0];
@@ -35,8 +35,8 @@ test('codecov: codecov.io old style (with branch)', t => {
 
 test('codecov: codecov.io new style', t => {
     const service = 'github';
-    const user = 'IndigoUnited';
-    const repo = 'js-promtie';
+    const user = 'codecov';
+    const repo = 'codecov-node';
 
     const badge = detectBadges(`https://codecov.io/${service}/${user}/${repo}/graphs/badge.svg`)[0];
 
@@ -50,8 +50,8 @@ test('codecov: codecov.io new style', t => {
 
 test('codecov: codecov.io new style (with branch)', t => {
     const service = 'github';
-    const user = 'IndigoUnited';
-    const repo = 'js-promtie';
+    const user = 'codecov';
+    const repo = 'codecov-node';
     const branch = 'master';
 
     const badge = detectBadges(`https://codecov.io/${service}/${user}/${repo}/branch/${branch}/graphs/badge.svg`)[0];
@@ -67,8 +67,8 @@ test('codecov: codecov.io new style (with branch)', t => {
 
 test('codecov: shields.io', t => {
     const service = 'github';
-    const user = 'IndigoUnited';
-    const repo = 'js-promtie';
+    const user = 'codecov';
+    const repo = 'codecov-node';
 
     const badge = detectBadges(`https://img.shields.io/codecov/c/${service}/${user}/${repo}.svg`)[0];
 
@@ -82,8 +82,8 @@ test('codecov: shields.io', t => {
 
 test('codecov: shields.io (with branch)', t => {
     const service = 'github';
-    const user = 'IndigoUnited';
-    const repo = 'js-promtie';
+    const user = 'codecov';
+    const repo = 'codecov-node';
     const branch = 'master';
 
     const badge = detectBadges(`https://img.shields.io/codecov/c/${service}/${user}/${repo}/${branch}.svg`)[0];
@@ -99,8 +99,8 @@ test('codecov: shields.io (with branch)', t => {
 
 test('codecov: not a valid codecov url', t => {
     const service = 'github';
-    const user = 'IndigoUnited';
-    const repo = 'js-promtie';
+    const user = 'codecov';
+    const repo = 'codecov-node';
 
     t.falsy(detectBadges(`https://codecov.com/${service}/${user}/${repo}/graph/coverage.svg`)[0]);
 });
