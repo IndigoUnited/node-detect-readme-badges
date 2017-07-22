@@ -12,7 +12,6 @@ const parsersKeys = Object.keys(parsers);
 // codacy https://api.codacy.com/project/badge/grade/${hash}
 // gitter https://badges.gitter.im/${user}/${package}.png
 // parallelci
-// https://codecov.io/github/codecov/codecov-ruby/coverage.svg?branch=master
 // http://www.coverity.com/
 
 // loose definition of a badge url
