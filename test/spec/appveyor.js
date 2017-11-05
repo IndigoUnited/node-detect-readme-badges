@@ -18,7 +18,7 @@ test('appveyor: appveyor.io', t => {
     t.is(badge.urls.shields, `https://img.shields.io/appveyor/ci/${user}/${repo}.svg`);
     t.is(badge.urls.content, `https://img.shields.io/appveyor/ci/${user}/${repo}.json`);
     t.is(badge.info.service, 'appveyor');
-    t.is(badge.info.type, 'coverage');
+    t.is(badge.info.type, 'build');
 });
 
 test('appveyor: appveyor.io (with branch)', t => {
@@ -33,7 +33,7 @@ test('appveyor: appveyor.io (with branch)', t => {
     t.is(badge.urls.shields, `https://img.shields.io/appveyor/ci/${user}/${repo}/${branch}.svg`);
     t.is(badge.urls.content, `https://img.shields.io/appveyor/ci/${user}/${repo}/${branch}.json`);
     t.is(badge.info.service, 'appveyor');
-    t.is(badge.info.type, 'coverage');
+    t.is(badge.info.type, 'build');
 });
 
 test('appveyor: shields.io', t => {
@@ -47,7 +47,7 @@ test('appveyor: shields.io', t => {
     t.is(badge.urls.shields, `https://img.shields.io/appveyor/ci/${user}/${repo}.svg`);
     t.is(badge.urls.content, `https://img.shields.io/appveyor/ci/${user}/${repo}.json`);
     t.is(badge.info.service, 'appveyor');
-    t.is(badge.info.type, 'coverage');
+    t.is(badge.info.type, 'build');
 });
 
 test('appveyor: shields.io (with branch)', t => {
@@ -62,7 +62,7 @@ test('appveyor: shields.io (with branch)', t => {
     t.is(badge.urls.shields, `https://img.shields.io/appveyor/ci/${user}/${repo}/${branch}.svg`);
     t.is(badge.urls.content, `https://img.shields.io/appveyor/ci/${user}/${repo}/${branch}.json`);
     t.is(badge.info.service, 'appveyor');
-    t.is(badge.info.type, 'coverage');
+    t.is(badge.info.type, 'build');
     t.deepEqual(badge.info.modifiers, { branch: 'master' });
 });
 

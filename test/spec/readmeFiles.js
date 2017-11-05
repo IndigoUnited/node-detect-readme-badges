@@ -128,7 +128,7 @@ test('readme files: bower', t => {
             shields: 'https://img.shields.io/appveyor/ci/bower/bower/master.svg',
             content: 'https://img.shields.io/appveyor/ci/bower/bower/master.json',
         },
-        info: { service: 'appveyor', type: 'coverage', modifiers: { branch: 'master' } },
+        info: { service: 'appveyor', type: 'build', modifiers: { branch: 'master' } },
     });
     t.deepEqual(badges[2], {
         urls: {
