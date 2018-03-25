@@ -144,3 +144,52 @@ test('readme files: bower', t => {
         },
     });
 });
+
+test('readme files: purgecss', t => {
+    const badges = detectBadges(readFile(path.join(__dirname, '../fixtures/purgecss.md')).toString());
+
+    t.deepEqual(badges[0], {
+        urls: {
+            original: 'https://travis-ci.org/FullHuman/purgecss.svg?branch=master',
+            service: 'https://api.travis-ci.org/FullHuman/purgecss.svg?branch=master',
+            shields: 'https://img.shields.io/travis/FullHuman/purgecss/master.svg',
+            content: 'https://img.shields.io/travis/FullHuman/purgecss/master.json',
+        },
+        info: { service: 'travis', type: 'build', modifiers: { branch: 'master' } },
+    });
+    t.deepEqual(badges[1], {
+        urls: {
+            original: 'https://circleci.com/gh/FullHuman/purgecss/tree/master.svg?style=shield',
+            service: 'https://circleci.com/gh/FullHuman/purgecss/tree/master.svg',
+            shields: 'https://img.shields.io/circleci/project/github/FullHuman/purgecss/master.svg',
+            content: 'https://img.shields.io/circleci/project/github/FullHuman/purgecss/master.json',
+        },
+        info: { service: 'circleci', type: 'build', modifiers: { branch: 'master' } },
+    });
+    t.deepEqual(badges[2], {
+        urls: {
+            original: 'https://david-dm.org/fullhuman/purgecss/status.svg',
+            service: 'https://david-dm.org/fullhuman/purgecss/status.svg',
+            shields: 'https://img.shields.io/david/fullhuman/purgecss/status.svg',
+            content: 'https://img.shields.io/david/fullhuman/purgecss/status.json',
+        },
+        info: { service: 'david', type: 'dependencies', modifiers: { statusType: 'normal' } },
+    });
+    t.deepEqual(badges[3], {
+        urls: {
+            original: 'https://david-dm.org/fullhuman/purgecss/dev-status.svg',
+            service: 'https://david-dm.org/fullhuman/purgecss/dev-status.svg',
+            shields: 'https://img.shields.io/david/dev/fullhuman/purgecss.svg',
+            content: 'https://img.shields.io/david/dev/fullhuman/purgecss.json',
+        },
+        info: { service: 'david', type: 'dependencies', modifiers: { statusType: 'dev' } },
+    });
+    t.deepEqual(badges[4], {
+        urls: {
+            original: 'https://img.shields.io/npm/v/purgecss.svg',
+            shields: 'https://img.shields.io/npm/v/purgecss.svg',
+            content: 'https://img.shields.io/npm/v/purgecss.json',
+        },
+        info: { service: 'npm', type: 'version', modifiers: { type: 'v' } },
+    });
+});
