@@ -7,7 +7,6 @@ const parsers = requireDirectory(module, './lib', { recurse: false });
 const parsersKeys = Object.keys(parsers);
 
 // TODO badges to support:
-// circle-ci https://circleci.com/gh/${user}/${package}.svg
 // codacy https://api.codacy.com/project/badge/grade/${hash}
 // gitter https://badges.gitter.im/${user}/${package}.png
 // parallelci
