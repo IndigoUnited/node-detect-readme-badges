@@ -7,13 +7,12 @@ const parsers = requireDirectory(module, './lib', { recurse: false });
 const parsersKeys = Object.keys(parsers);
 
 // TODO badges to support:
-// codacy https://api.codacy.com/project/badge/grade/${hash}
 // gitter https://badges.gitter.im/${user}/${package}.png
 // parallelci
 // http://www.coverity.com/
 
 // Loose definition of a badge url
-// Appveyor is the only that doesn't have any extension. It has /api on the url,
+// Appveyor is the only that doesn't have any extension or badge on the url. It has /api on the url,
 // but this is too generic to be added here, so we playing safe and not applying it.
 function isBadgeUrl(url) {
     return ['.svg', '.png', '.jpg', '.gif', 'svg=true', 'png=true', 'badge', 'appveyor']
