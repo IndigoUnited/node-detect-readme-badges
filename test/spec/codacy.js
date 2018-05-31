@@ -1,7 +1,7 @@
 import test from 'ava';
 import detectBadges from '../../';
 
-test('codacy: codacy.com (grade)', t => {
+test('codacy: codacy.com (quality)', t => {
     const token = 'e27821fb6289410b8f58338c7e0bc686';
 
     const badge = detectBadges(`https://api.codacy.com/project/badge/Grade/${token}`)[0];
@@ -10,10 +10,10 @@ test('codacy: codacy.com (grade)', t => {
     t.is(badge.urls.service, `https://api.codacy.com/project/badge/Grade/${token}`);
     t.is(badge.urls.content, `https://img.shields.io/codacy/grade/${token}.json`);
     t.is(badge.info.service, 'codacy');
-    t.is(badge.info.type, 'grade');
+    t.is(badge.info.type, 'quality');
 });
 
-test('codacy: codacy.com (grade with branch)', t => {
+test('codacy: codacy.com (quality with branch)', t => {
     const token = 'e27821fb6289410b8f58338c7e0bc686';
     const branch = 'master';
 
@@ -23,7 +23,7 @@ test('codacy: codacy.com (grade with branch)', t => {
     t.is(badge.urls.service, `https://api.codacy.com/project/badge/Grade/${token}?branch=${branch}`);
     t.is(badge.urls.content, `https://img.shields.io/codacy/grade/${token}/${branch}.json`);
     t.is(badge.info.service, 'codacy');
-    t.is(badge.info.type, 'grade');
+    t.is(badge.info.type, 'quality');
     t.deepEqual(badge.info.modifiers, { branch: 'master' });
 });
 
@@ -53,7 +53,7 @@ test('codacy: codacy.com (coverage with branch)', t => {
     t.deepEqual(badge.info.modifiers, { branch: 'master' });
 });
 
-test('codacy: shields.io (grade)', t => {
+test('codacy: shields.io (quality)', t => {
     const token = 'e27821fb6289410b8f58338c7e0bc686';
 
     const badge = detectBadges(`https://img.shields.io/codacy/grade/${token}.svg`)[0];
@@ -62,10 +62,10 @@ test('codacy: shields.io (grade)', t => {
     t.is(badge.urls.service, `https://api.codacy.com/project/badge/Grade/${token}`);
     t.is(badge.urls.content, `https://img.shields.io/codacy/grade/${token}.json`);
     t.is(badge.info.service, 'codacy');
-    t.is(badge.info.type, 'grade');
+    t.is(badge.info.type, 'quality');
 });
 
-test('codacy: shields.io (grade with branch)', t => {
+test('codacy: shields.io (quality with branch)', t => {
     const token = 'e27821fb6289410b8f58338c7e0bc686';
     const branch = 'master';
 
@@ -75,7 +75,7 @@ test('codacy: shields.io (grade with branch)', t => {
     t.is(badge.urls.service, `https://api.codacy.com/project/badge/Grade/${token}?branch=${branch}`);
     t.is(badge.urls.content, `https://img.shields.io/codacy/grade/${token}/${branch}.json`);
     t.is(badge.info.service, 'codacy');
-    t.is(badge.info.type, 'grade');
+    t.is(badge.info.type, 'quality');
     t.deepEqual(badge.info.modifiers, { branch: 'master' });
 });
 

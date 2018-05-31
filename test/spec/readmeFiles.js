@@ -191,7 +191,7 @@ test('readme files: purgecss', t => {
             shields: 'https://img.shields.io/codacy/grade/2f2f3fb0a5c541beab2018483e62a828.svg',
             content: 'https://img.shields.io/codacy/grade/2f2f3fb0a5c541beab2018483e62a828.json',
         },
-        info: { service: 'codacy', type: 'grade', modifiers: { branch: undefined } },
+        info: { service: 'codacy', type: 'quality', modifiers: { branch: undefined } },
     });
 
     t.deepEqual(badges[5], {
