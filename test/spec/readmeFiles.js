@@ -184,7 +184,26 @@ test('readme files: purgecss', t => {
         },
         info: { service: 'david', type: 'dependencies', modifiers: { statusType: 'dev' } },
     });
+
     t.deepEqual(badges[4], {
+        urls: { original: 'https://api.codacy.com/project/badge/Grade/2f2f3fb0a5c541beab2018483e62a828',
+            service: 'https://api.codacy.com/project/badge/Grade/2f2f3fb0a5c541beab2018483e62a828',
+            shields: 'https://img.shields.io/codacy/grade/2f2f3fb0a5c541beab2018483e62a828.svg',
+            content: 'https://img.shields.io/codacy/grade/2f2f3fb0a5c541beab2018483e62a828.json',
+        },
+        info: { service: 'codacy', type: 'quality', modifiers: { branch: undefined } },
+    });
+
+    t.deepEqual(badges[5], {
+        urls: {
+            original: 'https://api.codacy.com/project/badge/Coverage/2f2f3fb0a5c541beab2018483e62a828',
+            service: 'https://api.codacy.com/project/badge/Coverage/2f2f3fb0a5c541beab2018483e62a828',
+            shields: 'https://img.shields.io/codacy/coverage/2f2f3fb0a5c541beab2018483e62a828.svg',
+            content: 'https://img.shields.io/codacy/coverage/2f2f3fb0a5c541beab2018483e62a828.json' },
+        info: { service: 'codacy', type: 'coverage', modifiers: { branch: undefined } },
+    });
+
+    t.deepEqual(badges[6], {
         urls: {
             original: 'https://img.shields.io/npm/v/purgecss.svg',
             shields: 'https://img.shields.io/npm/v/purgecss.svg',
