@@ -29,6 +29,21 @@ test('travis: travis-ci.org (with branch)', t => {
     t.deepEqual(badge.info.modifiers, { branch: 'master' });
 });
 
+test('travis: travis-ci.com (with branch)', t => {
+    const user = 'IndigoUnited';
+    const repo = 'js-promtie';
+    const branch = 'master';
+
+    const badge = detectBadges(`https://travis-ci.com/${user}/${repo}.svg?branch=${branch}`)[0];
+
+    t.is(badge.urls.original, `https://travis-ci.com/${user}/${repo}.svg?branch=${branch}`);
+    t.is(badge.urls.service, `https://api.travis-ci.com/${user}/${repo}.svg?branch=${branch}`);
+    t.is(badge.urls.content, `https://img.shields.io/travis/${user}/${repo}/${branch}.json`);
+    t.is(badge.info.service, 'travis');
+    t.is(badge.info.type, 'build');
+    t.deepEqual(badge.info.modifiers, { branch: 'master' });
+});
+
 test('travis: shields.io', t => {
     const user = 'IndigoUnited';
     const repo = 'js-promtie';
